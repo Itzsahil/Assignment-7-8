@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <script>
+            function PROFILE_FORM() {
+                var f_name = 
+                    document.forms["RegForm"]["First Name"];
+                var l_name = 
+                    document.forms["RegForm"]["Last Name"];
+                var email = 
+                    document.forms["RegForm"]["EMail"];
+                var phone = 
+                    document.forms["RegForm"]["Telephone"];
+                var status = 
+                    document.forms["RegForm"]["Status"];
+                var availability = 
+                    document.forms["RegForm"]["Availability"];
+                
+                var skills = 
+                    document.forms["RegForm"]["Skills"];
+  
+                if (f_name.value == "") {
+                    window.alert("Please enter your first name.");
+                    name.focus();
+                    return false;
+                }
+                if (l_name.value == "") {
+                    window.alert("Please enter your last name.");
+                    name.focus();
+                    return false;
+                }
+  
+                if (skills.value == "") {
+                    window.alert("Please enter your skills.");
+                    skills.focus();
+                    return false;
+                }
+  
+                if (email.value == "") {
+                    window.alert(
+                      "Please enter a valid e-mail address.");
+                    email.focus();
+                    return false;
+                }
+  
+                if (phone.value == "") {
+                    window.alert(
+                      "Please enter your telephone number.");
+                    phone.focus();
+                    return false;
+                }
+  
+                if (availability.selectedIndex < 1) {
+                    alert("Please enter your availability.");
+                    availability.focus();
+                    return false;
+                }
+  
+                if (status.selectedIndex < 1) {
+                    alert("Please enter your status.");
+                    status.focus();
+                    return false;
+                }
+  
+                return true;
+            }
+        </script>
+  
+        <style>
+            div {
+                box-sizing: border-box;
+                width: 100%;
+                border: 100px solid black;
+                float: left;
+                align-content: center;
+                align-items: center;
+            }
+  
+            form {
+                margin: 0 auto;
+                width: 600px;
+            }
+        </style>
+    </head>
+  
+    <body>
+        <h1 style="text-align: center;">PROFILE FORM</h1>
+        <form name="RegForm" action="/submit.php" 
+              onsubmit="return PROFILE_FORM()" method="post">
+            <p>First Name: <input type="text" 
+                            size="65" name="f_name" /></p>
+            <br />
+            <p>Last Name: <input type="text" 
+                size="65" name="l_name" /></p>
+            <br />
+            
+            <p>E-mail Address: <input type="text" 
+                            size="65" name="EMail" /></p>
+            <br />
+            
+            <p>Telephone: <input type="text" 
+                        size="65" name="Telephone" /></p>
+            <br />
+            <p>Skills: <input type="text" 
+                size="65" name="skills" /></p>
+            <br />
+            <p>
+                Select Your Status:
+                <select type="text" value="" name="status">
+                    <option>International Student</option>
+                    <option>Graduate</option>
+                    <option>Student</option>
+                    
+                </select>
+            </p>
+            <br />
+  
+            <p>
+                Select Your Availability: 
+                <select type="text" value="" name="availability">
+                    <option>Full Time</option>
+                    <option>Part Time</option>
+                    
+                </select>
+            </p>
+            <br />
+            <p>Upload Resume: 
+            <input type="file" id="myFile" name="filename"></p>
+            <br />
+            
+            <p>
+                <input type="submit" 
+                       value="Submit" name="Submit" />
+                <input type="reset" 
+                       value="Reset" name="Reset" />
+            </p>
+        </form>
+    </body>
+</html>
